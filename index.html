@@ -14,20 +14,20 @@
     </div>
   </header>
   <main class="flex justify-center">
-    <button class="rounded-md font-bold text-purple-500 hover:bg-gray-200 px-4 py-2 text-2xl mb-5 transition-colors">+ Add Book</button>
-    <!-- <div class="bg-gray-200 p-8 rounded-lg text-xl shadow-md fixed bottom-1/2 z-10">
+    <button class="rounded-md font-bold text-purple-500 hover:bg-gray-200 px-4 py-2 text-2xl mb-5 transition-colors" onclick="showAddBook()">+ Add Book</button>
+    <div class="bg-gray-200 p-8 rounded-lg text-xl shadow-md fixed bottom-1/2 z-10 hidden" id="add">
       <h2 class="mb-5 text-center font-semibold">Add new book</h2>
-      <form action="POST" class="flex flex-col gap-5">
-        <input type="text" required placeholder="Title" name="title" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors">
-        <input type="text" required placeholder="Author" name="author" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors">
-        <input type="text" required placeholder="Pages" name="pages" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors">
+      <form class="flex flex-col gap-5" onsubmit="addBook()">
+        <input type="text" required placeholder="Title" name="title" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors" oninput="setBook(event)">
+        <input type="text" required placeholder="Author" name="author" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors" oninput="setBook(event)">
+        <input type="text" required placeholder="Pages" name="pages" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors" oninput="setBook(event)">
         <div class="m-auto">
           <label for="read" class="">Have you read it?</label>
-          <input id="read" type="checkbox" checked>
+          <input name="read" type="checkbox" onclick="setBook(event)">
         </div>
         <button class="rounded-md font-bold text-white bg-purple-500 px-4 py-2 text-xl transition-colors hover:bg-purple-400">Submit</button>
       </form>
-    </div> -->
+    </div>
     <div class="grid grid-cols-3 gap-6">
         <!-- <div class="bg-gray-200 p-8 rounded-lg text-2xl shadow-lg flex flex-col gap-4 w-80 text-center">
           <h3 class="font-bold">The Hobbit</h3>
