@@ -7,17 +7,17 @@
   <link href="/dist/output.css" rel="stylesheet">
   <title>Library</title>
 </head>
-<body>
+<body onload="libraryBooks()">
   <header class="p-9 mb-5 max-w-full shadow-lg">
     <div class="m-auto max-w-7xl"> 
       <h1 class="text-3xl font-extrabold uppercase text-purple-500">Library</h1>
     </div>
   </header>
-  <main class="flex justify-center">
+  <main class="flex flex-col items-center">
     <button class="rounded-md font-bold text-purple-500 hover:bg-gray-200 px-4 py-2 text-2xl mb-5 transition-colors" onclick="showAddBook()">+ Add Book</button>
     <div class="bg-gray-200 p-8 rounded-lg text-xl shadow-md fixed bottom-1/2 z-10 hidden" id="add">
       <h2 class="mb-5 text-center font-semibold">Add new book</h2>
-      <form class="flex flex-col gap-5" onsubmit="addBook()">
+      <form class="flex flex-col gap-5" onsubmit="addBookToLibrary(event)">
         <input type="text" required placeholder="Title" name="title" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors" oninput="setBook(event)">
         <input type="text" required placeholder="Author" name="author" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors" oninput="setBook(event)">
         <input type="text" required placeholder="Pages" name="pages" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors" oninput="setBook(event)">
@@ -28,18 +28,10 @@
         <button class="rounded-md font-bold text-white bg-purple-500 px-4 py-2 text-xl transition-colors hover:bg-purple-400">Submit</button>
       </form>
     </div>
-    <div class="grid grid-cols-3 gap-6">
-        <!-- <div class="bg-gray-200 p-8 rounded-lg text-2xl shadow-lg flex flex-col gap-4 w-80 text-center">
-          <h3 class="font-bold">The Hobbit</h3>
-          <p>J.R.R. Tolkien</p>
-          <p>295 pages</p>
-          <p>Not read yet</p>
-          <button class="rounded-md font-bold text-white bg-purple-500 px-4 py-2 text-xl transition-colors hover:bg-purple-400">Remove</button>
-          <button class="rounded-md font-bold text-white bg-gray-500 px-4 py-2 text-xl transition-colors hover:bg-gray-400">Edit</button>
-      </div> -->
+    <div class="grid grid-cols-3 gap-6" id="library">
     </div>
   </main>
-  <footer class="fixed bottom-0 p-4 w-full bg-white outline outline-1 outline-gray-200 text-purple-500">
+  <footer class="fixed bottom-0 LEFT-0 p-4 w-full bg-white outline outline-1 outline-gray-200 text-purple-500">
     <p class="text-center font-bold text-xl">By nathcarnevalli</p>
   </footer>
   <script src="./src/js/script.js"></script>
