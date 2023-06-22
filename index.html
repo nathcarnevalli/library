@@ -15,8 +15,9 @@
       <h1 class="text-3xl font-extrabold uppercase text-purple-500">Library</h1>
     </div>
   </header>
-  <main class="flex flex-col items-center">
+  <main class="flex flex-col items-center pb-28">
     <button class="rounded-md font-bold text-purple-500 hover:bg-gray-200 px-4 py-2 text-2xl mb-5 transition-colors" onclick="showAddBook()">+ Add Book</button>
+    <div class="fixed hidden w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400 opacity-50 z-10 cursor-pointer" id="overlay" onclick="hideAddBook()"></div>
     <div class="bg-gray-200 p-8 rounded-lg text-xl shadow-md fixed bottom-1/2 z-10 hidden" id="add">
       <h2 class="mb-5 text-center font-semibold">Add new book</h2>
       <form class="flex flex-col gap-5" onsubmit="addBookToLibrary(event)">

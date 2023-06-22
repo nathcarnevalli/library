@@ -10,11 +10,16 @@ let books = []
 function showAddBook() {
   add.className =
     'bg-gray-200 p-8 rounded-lg text-xl shadow-md fixed bottom-1/2 z-10'
+
+  overlay.className =
+    'fixed w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400 opacity-50 z-10 cursor-pointer'
 }
 
 function hideAddBook() {
   add.className =
     'bg-gray-200 p-8 rounded-lg text-xl shadow-md fixed bottom-1/2 z-10 hidden'
+  overlay.className =
+    'fixed w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400 opacity-50 z-10 cursor-pointer hidden'
 }
 
 function setBook(event) {
@@ -47,7 +52,6 @@ function createBook(book) {
   pages.textContent = `${book.pages} pages`
   read.textContent = book.read ? 'Read' : 'Not read yet'
   edit.textContent = 'Edit'
-  edit.id = 'edit'
   remove.textContent = 'Remove'
 
   remove.addEventListener('click', () => {
