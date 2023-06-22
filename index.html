@@ -10,11 +10,13 @@
   <title>Library</title>
 </head>
 <body onload="libraryBooks()">
+
   <header class="p-9 mb-5 max-w-full shadow-lg">
     <div class="m-auto max-w-7xl"> 
       <h1 class="text-3xl font-extrabold uppercase text-purple-500">Library</h1>
     </div>
   </header>
+
   <main class="flex flex-col items-center pb-28">
     <button class="rounded-md font-bold text-purple-500 hover:bg-gray-200 px-4 py-2 text-2xl mb-5 transition-colors" onclick="showAddBook()">+ Add Book</button>
     <div class="fixed hidden w-full h-full top-0 right-0 bottom-0 left-0 bg-slate-400 opacity-50 z-10 cursor-pointer" id="overlay" onclick="hideAddBook()"></div>
@@ -47,9 +49,12 @@
     <div class="grid grid-cols-3 gap-6" id="library">
     </div>
   </main>
+
   <footer class="fixed bottom-0 LEFT-0 p-4 w-full bg-white outline outline-1 outline-gray-200 text-purple-500">
     <p class="text-center font-bold text-xl">By nathcarnevalli</p>
   </footer>
+
+  
   <script src="./src/js/script.js"></script>
 </body>
 </html>

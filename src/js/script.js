@@ -7,6 +7,8 @@ const book = {
 
 let books = []
 
+let id = 0
+
 function showAddBook() {
   add.className =
     'bg-gray-200 p-8 rounded-lg text-xl shadow-md fixed bottom-1/2 z-10'
@@ -39,6 +41,8 @@ function createBook(book) {
   const edit = document.createElement('button')
   const remove = document.createElement('button')
 
+  book.id = id + 1
+  divBook.id = book.id
   divBook.className =
     'bg-gray-200 p-8 rounded-lg text-2xl shadow-lg flex flex-col gap-4 w-80 text-center'
   title.className = 'font-bold'
@@ -54,8 +58,11 @@ function createBook(book) {
   edit.textContent = 'Edit'
   remove.textContent = 'Remove'
 
-  remove.addEventListener('click', () => {
-    library.removeChild(divBook)
+  remove.addEventListener('click', event => {
+    library.removeChild(event.target.parentElement)
+    books = books.filter(
+      element => element.id !== Number(event.target.parentElement.id)
+    )
     localStorage.setItem('books', JSON.stringify(books))
   })
 
@@ -67,6 +74,7 @@ function createBook(book) {
   divBook.appendChild(read)
   divBook.appendChild(edit)
   divBook.appendChild(remove)
+
   return divBook
 }
 
@@ -75,13 +83,15 @@ function addBookToLibrary(event) {
   hideAddBook()
 
   const divBook = createBook(book)
-
   books.push(book)
   library.appendChild(divBook)
   localStorage.setItem('books', JSON.stringify(books))
+  localStorage.setItem('id', id)
+  id++
 }
 
 function libraryBooks() {
+  id = Number(localStorage.getItem('id'))
   for (let book of JSON.parse(localStorage.getItem('books'))) {
     const divBook = createBook(book)
     library.appendChild(divBook)
