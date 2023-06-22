@@ -5,7 +5,7 @@ const book = {
   read: false
 }
 
-const books = []
+let books = []
 
 function showAddBook() {
   add.className =
@@ -47,7 +47,15 @@ function createBook(book) {
   pages.textContent = `${book.pages} pages`
   read.textContent = book.read ? 'Read' : 'Not read yet'
   edit.textContent = 'Edit'
+  edit.id = 'edit'
   remove.textContent = 'Remove'
+
+  remove.addEventListener('click', () => {
+    library.removeChild(divBook)
+    localStorage.setItem('books', JSON.stringify(books))
+  })
+
+  edit.addEventListener('click', () => {})
 
   divBook.appendChild(title)
   divBook.appendChild(author)
@@ -55,7 +63,6 @@ function createBook(book) {
   divBook.appendChild(read)
   divBook.appendChild(edit)
   divBook.appendChild(remove)
-
   return divBook
 }
 

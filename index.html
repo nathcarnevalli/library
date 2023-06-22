@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/dist/output.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./src/images/book.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>Library</title>
 </head>
 <body onload="libraryBooks()">
@@ -22,7 +24,20 @@
         <input type="text" required placeholder="Author" name="author" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors" oninput="setBook(event)">
         <input type="text" required placeholder="Pages" name="pages" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors" oninput="setBook(event)">
         <div class="m-auto">
-          <label for="read" class="">Have you read it?</label>
+          <label for="read">Have you read it?</label>
+          <input name="read" type="checkbox" onclick="setBook(event)">
+        </div>
+        <button class="rounded-md font-bold text-white bg-purple-500 px-4 py-2 text-xl transition-colors hover:bg-purple-400">Submit</button>
+      </form>
+    </div>
+    <div class="bg-gray-200 p-8 rounded-lg text-xl shadow-md fixed bottom-1/2 z-10 hidden" id="edit">
+      <h2 class="mb-5 text-center font-semibold">Edit book</h2>
+      <form class="flex flex-col gap-5">
+        <input type="text" required placeholder="Title" name="title" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors" oninput="setBook(event)">
+        <input type="text" required placeholder="Author" name="author" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors" oninput="setBook(event)">
+        <input type="text" required placeholder="Pages" name="pages" class="px-4 py-1 border-transparent outline-none focus:outline-4 focus:outline-purple-400 rounded-md transition-colors" oninput="setBook(event)">
+        <div class="m-auto">
+          <label for="read">Have you read it?</label>
           <input name="read" type="checkbox" onclick="setBook(event)">
         </div>
         <button class="rounded-md font-bold text-white bg-purple-500 px-4 py-2 text-xl transition-colors hover:bg-purple-400">Submit</button>
